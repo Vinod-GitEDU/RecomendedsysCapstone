@@ -27,7 +27,7 @@ def predict():
 	if type(prediction) == str:
 		return render_template('index.html', OUTPUT="No such user exists")
 	else:
-		return render_template('index.html', OUTPUT=prediction.to_html())
+		return render_template('index.html', user_val=Input,OUTPUT=prediction.to_html())
 
 
 if __name__ == "__main__":

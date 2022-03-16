@@ -9,7 +9,7 @@ from sklearn.ensemble import RandomForestClassifier
 # from xgboost import XGBClassifier
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import confusion_matrix, f1_score, classification_report
-
+import gc
 
 
 def recommender(user):
@@ -26,9 +26,9 @@ def recommender(user):
 		clean_df_model = pickle.load(fp)
 
 
-
 	with open('PickleFiles/Recommender.pkl','rb') as fp:
 		user_final_rating_model = pickle.load(fp)
+
 	if len(clean_df_model[clean_df_model.reviews_username==user])>0:
 		user_input=user
 		recommended_prods_20=user_final_rating_model.loc[user_input].sort_values(ascending=False)[:20]
