@@ -6,6 +6,6 @@ Jinja2==3.0.1
 MarkupSafe==2.0.1
 Werkzeug==2.0.1
 pandas
-xgboost
 scikit-learn
 pickle-mixin
+requests
